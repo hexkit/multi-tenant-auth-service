@@ -1,4 +1,8 @@
 packages:
-  - 'packages/backend/apps/*/*'
-  - 'packages/backend/libraries/*'
-  - 'packages/backend/tools/*'
+  - packages/backend/apps/*/*
+  - packages/backend/libraries/*
+  - packages/backend/tools/*
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild

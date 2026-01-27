@@ -21,7 +21,7 @@ export default {
   workspaces: {
     ".": {
       entry: [],
-      ignoreDependencies: [],
+      ignoreDependencies: ["@hexkit/instructions"],
       project: [],
     },
     "packages/backend/apps/*/*": defaultWorkspaceProjectConfig,
