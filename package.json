@@ -5,7 +5,7 @@
     "@commitlint/cli": "20.3.0",
     "@commitlint/config-conventional": "20.3.0",
     "@commitlint/prompt-cli": "20.3.0",
-    "@hexkit/instructions": "^0.3.1",
+    "@hexkit/instructions": "~0.4.0",
     "husky": "9.1.7",
     "knip": "5.79.0",
     "lint-staged": "16.2.7",
