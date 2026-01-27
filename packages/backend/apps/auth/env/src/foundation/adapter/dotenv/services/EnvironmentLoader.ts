@@ -1,46 +1,28 @@
-import * as dotenv from 'dotenv';
+import { DotEnvLoader } from '@hexkit/dotenv';
 import { bool, cleanEnv, json, num, str, url } from 'envalid';
 import { injectable } from 'inversify';
 
-import { Environment } from '../domain/Environment.js';
-import { EnvironmentRaw } from '../domain/EnvironmentRaw.js';
+import { Environment } from '../../../application/models/Environment.js';
+import { EnvironmentRaw } from '../../../application/models/EnvironmentRaw.js';
 
 const DEFAULT_DOT_ENV_PATH: string = '.env';
-const DOT_ENV_PATH_ENV_VAR: string = 'AUTH_DOT_ENV_PATH';
-const DOT_ENV_ENABLED_ENV_VAR: string = 'AUTH_DOT_ENV_ENABLED';
+const DOT_ENV_PATH_ENV_VAR: string = 'APP_DOT_ENV_PATH';
+const DOT_ENV_ENABLED_ENV_VAR: string = 'APP_DOT_ENV_ENABLED';
 
 @injectable()
-export class EnvironmentLoader {
-  readonly #environment: Environment;
-
-  constructor(dotEnvPath?: string) {
-    const shouldLoadDotEnv: boolean = this.#shouldParseEnvFile();
-
-    if (shouldLoadDotEnv) {
-      const envPath: string = dotEnvPath ?? this.#getDefaultDotEnvPath();
-      dotenv.config({ path: envPath });
-    }
-
-    this.#environment = this.#parseEnv(process.env);
-  }
-
-  public get env(): Environment {
-    return this.#environment;
-  }
-
+export class EnvironmentLoader extends DotEnvLoader<Environment> {
   public static build(): EnvironmentLoader {
-    return new EnvironmentLoader();
+    const dotEnvPath: string =
+      process.env[DOT_ENV_PATH_ENV_VAR] ?? DEFAULT_DOT_ENV_PATH;
+
+    const environmentLoader: EnvironmentLoader = new EnvironmentLoader(
+      dotEnvPath,
+    );
+
+    return environmentLoader;
   }
 
-  #getDefaultDotEnvPath(): string {
-    return process.env[DOT_ENV_PATH_ENV_VAR] ?? DEFAULT_DOT_ENV_PATH;
-  }
-
-  #shouldParseEnvFile(): boolean {
-    return process.env[DOT_ENV_ENABLED_ENV_VAR] !== 'false';
-  }
-
-  #parseEnv(env: NodeJS.ProcessEnv): Environment {
+  protected _parseEnv(env: Record<string, string>): Environment {
     const rawEnv: EnvironmentRaw = cleanEnv(env, {
       AUTH_API_KEY: str(),
       AUTH_CORS_ORIGINS: json(),
@@ -72,5 +54,9 @@ export class EnvironmentLoader {
       port: rawEnv.AUTH_PORT,
       superAdminList: rawEnv.AUTH_SUPER_ADMIN_LIST,
     };
+  }
+
+  protected override _shouldParseEnvFile(): boolean {
+    return process.env[DOT_ENV_ENABLED_ENV_VAR] !== 'false';
   }
 }

@@ -1,8 +1,8 @@
 import type { Mocked } from 'vitest';
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { Environment } from '../domain/Environment.js';
-import { EnvironmentLoader } from './EnvironmentLoader.js';
+import { EnvironmentLoader } from '../../adapter/dotenv/services/EnvironmentLoader.js';
+import { Environment } from '../models/Environment.js';
 import { EnvironmentService } from './EnvironmentService.js';
 
 describe(EnvironmentService, () => {

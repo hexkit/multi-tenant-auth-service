@@ -1,7 +1,7 @@
 import { ContainerModule, type ContainerModuleLoadOptions } from 'inversify';
 
-import { EnvironmentLoader } from '../../../application/EnvironmentLoader.js';
-import { EnvironmentService } from '../../../application/EnvironmentService.js';
+import { EnvironmentService } from '../../../application/services/EnvironmentService.js';
+import { EnvironmentLoader } from '../../dotenv/services/EnvironmentLoader.js';
 
 export class EnvContainerModule extends ContainerModule {
   constructor() {

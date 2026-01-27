@@ -1,5 +1,8 @@
-export type { Environment, SuperAdmin } from './env/domain/Environment.js';
-export type { EnvironmentRaw } from './env/domain/EnvironmentRaw.js';
-export { EnvContainerModule } from './env/adapter/inversify/modules/EnvContainerModule.js';
-export { EnvironmentLoader } from './env/application/EnvironmentLoader.js';
-export { EnvironmentService } from './env/application/EnvironmentService.js';
+export type {
+  Environment,
+  SuperAdmin,
+} from './foundation/application/models/Environment.js';
+export type { EnvironmentRaw } from './foundation/application/models/EnvironmentRaw.js';
+export { EnvContainerModule } from './foundation/adapter/inversify/modules/EnvContainerModule.js';
+export { EnvironmentLoader } from './foundation/adapter/dotenv/services/EnvironmentLoader.js';
+export { EnvironmentService } from './foundation/application/services/EnvironmentService.js';
