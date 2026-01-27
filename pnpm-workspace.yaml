@@ -3,6 +3,10 @@ packages:
   - packages/backend/libraries/*
   - packages/backend/tools/*
 
+ignoredBuiltDependencies:
+  - '@prisma/engines'
+  - prisma
+
 onlyBuiltDependencies:
   - '@swc/core'
   - esbuild

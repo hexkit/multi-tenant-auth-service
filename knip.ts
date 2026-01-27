@@ -18,6 +18,9 @@ export default {
   commitlint: {
     config: "config/commitlint/commitlint.config.js",
   },
+  prisma: {
+    config: [],
+  },
   workspaces: {
     ".": {
       entry: [],
@@ -25,6 +28,18 @@ export default {
       project: [],
     },
     "packages/backend/apps/*/*": defaultWorkspaceProjectConfig,
+    "packages/backend/apps/auth/prisma-adapter": {
+      ...defaultWorkspaceProjectConfig,
+      entry: [...defaultWorkspaceProjectConfig.entry, "generated/**/*.js"],
+      ignoreDependencies: [
+        ...defaultWorkspaceProjectConfig.ignoreDependencies,
+        "@prisma/adapter-pg",
+        "@prisma/client",
+        "dotenv",
+        "prisma",
+      ],
+      ignoreFiles: ["prisma.config.ts"],
+    },
     "packages/backend/libraries/*": defaultWorkspaceProjectConfig,
     "packages/backend/tools/*": defaultWorkspaceProjectConfig,
   },

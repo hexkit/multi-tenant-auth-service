@@ -1,9 +1,9 @@
 {
-  "author": "Author",
+  "author": "Roberto Pintos López",
   "bugs": {
     "url": "https://github.com/hexkit/multi-tenant-auth-service/issues"
   },
-  "description": "Environment configuration package for the auth service",
+  "description": "Prisma adapter package for the auth service",
   "devDependencies": {
     "@hexkit/eslint-config": "0.3.0",
     "@hexkit/prettier-config": "0.2.0",
@@ -13,15 +13,18 @@
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "9.39.2",
     "prettier": "3.7.4",
+    "prisma": "7.3.0",
     "rimraf": "6.1.2",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
     "vitest": "3.0.7"
   },
   "dependencies": {
-    "@hexkit/dotenv": "0.2.1",
-    "envalid": "8.0.0",
-    "inversify": "^7.11.0"
+    "@hexkit/prisma": "~0.2.1",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "@prisma/client-runtime-utils": "^7.3.0",
+    "dotenv": "^16.5.0"
   },
   "devEngines": {
     "node": "^24.10.0",
@@ -30,8 +33,8 @@
   "keywords": [
     "node",
     "typescript",
-    "environment",
-    "configuration",
+    "prisma",
+    "database",
     "auth"
   ],
   "license": "MIT",
@@ -39,7 +42,7 @@
   "exports": {
     ".": "./lib/index.js"
   },
-  "name": "@multi-tenant-auth-service/auth-env",
+  "name": "@multi-tenant-auth-service/auth-prisma-adapter",
   "publishConfig": {
     "access": "public"
   },
