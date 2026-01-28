@@ -1,3 +1,4 @@
+export { PrismaClient } from '../generated';
 export { BaseCreateManyPrismaService } from './foundation/adapter/prisma/services/BaseCreateManyPrismaService.js';
 export { BaseCreatePrismaService } from './foundation/adapter/prisma/services/BaseCreatePrismaService.js';
 export { BaseDeleteManyPrismaService } from './foundation/adapter/prisma/services/BaseDeleteManyPrismaService.js';
