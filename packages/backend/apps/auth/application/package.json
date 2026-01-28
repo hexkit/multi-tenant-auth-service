@@ -5,6 +5,7 @@
   },
   "description": "Auth application package for the auth service",
   "devDependencies": {
+    "@multi-tenant-auth-service/auth-domain": "workspace:*",
     "@hexkit/eslint-config": "0.3.0",
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
