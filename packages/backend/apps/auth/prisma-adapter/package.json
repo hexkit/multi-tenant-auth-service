@@ -57,8 +57,10 @@
     "lint": "eslint ./src",
     "prebuild": "pnpm run build:clean",
     "test": "vitest run",
-    "test:unit": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:integration": "pnpm run test --project Integration",
+    "test:coverage": "pnpm run test:unit --coverage",
+    "test:uncommitted": "pnpm run test --changed=HEAD",
+    "test:unit": "pnpm run test --project Unit"
   },
   "type": "module",
   "version": "0.1.0"
