@@ -1,5 +1,6 @@
 export type {
   Environment,
+  MailConfig,
   SuperAdmin,
 } from './foundation/application/models/Environment.js';
 export type { EnvironmentRaw } from './foundation/application/models/EnvironmentRaw.js';
