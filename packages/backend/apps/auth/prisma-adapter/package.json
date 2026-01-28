@@ -6,6 +6,7 @@
   "description": "Prisma adapter package for the auth service",
   "devDependencies": {
     "@hexkit/eslint-config": "0.3.0",
+    "@hexkit/patterns": "0.2.1",
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
     "@hexkit/vitest-config": "0.3.0",
