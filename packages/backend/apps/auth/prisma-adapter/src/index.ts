@@ -1,4 +1,5 @@
 export { PrismaClient } from '../generated/index.js';
+export { PrismaModule } from './foundation/adapter/inversify/modules/PrismaModule.js';
 export { BaseCreateManyPrismaService } from './foundation/adapter/prisma/services/BaseCreateManyPrismaService.js';
 export { BaseCreatePrismaService } from './foundation/adapter/prisma/services/BaseCreatePrismaService.js';
 export { BaseDeleteManyPrismaService } from './foundation/adapter/prisma/services/BaseDeleteManyPrismaService.js';
