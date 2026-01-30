@@ -3,13 +3,13 @@
   "bugs": {
     "url": "https://github.com/hexkit/multi-tenant-auth-service/issues"
   },
-  "description": "Environment configuration package for the auth service",
+  "description": "Auth application package for the auth service",
   "devDependencies": {
+    "@multi-tenant-auth-service/auth-domain": "workspace:*",
     "@hexkit/eslint-config": "0.3.0",
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
     "@hexkit/vitest-config": "0.3.0",
-    "@types/node": "24.10.9",
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "9.39.2",
     "prettier": "3.7.4",
@@ -18,11 +18,6 @@
     "typescript": "5.9.3",
     "vitest": "4.0.18"
   },
-  "dependencies": {
-    "@hexkit/dotenv": "0.2.1",
-    "envalid": "8.0.0",
-    "inversify": "^7.11.0"
-  },
   "devEngines": {
     "node": "^24.10.0",
     "pnpm": "^10.13.1"
@@ -30,16 +25,15 @@
   "keywords": [
     "node",
     "typescript",
-    "environment",
-    "configuration",
-    "auth"
+    "auth",
+    "application"
   ],
   "license": "MIT",
   "module": "lib/index.js",
   "exports": {
     ".": "./lib/index.js"
   },
-  "name": "@multi-tenant-auth-service/auth-env",
+  "name": "@multi-tenant-auth-service/auth-application",
   "publishConfig": {
     "access": "public"
   },

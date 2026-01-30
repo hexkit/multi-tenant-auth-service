@@ -1,3 +1,12 @@
+export interface MailConfig {
+  defaultAddress: string;
+  host: string;
+  password: string;
+  port: number;
+  user: string;
+  useTls: boolean;
+}
+
 export interface SuperAdmin {
   email: string;
   name: string;
@@ -8,14 +17,7 @@ export interface Environment {
   corsOrigins: string[];
   databaseConnectionString: string;
   host: string;
-  mail: {
-    defaultAddress: string;
-    host: string;
-    password: string;
-    port: number;
-    user: string;
-    useTls: boolean;
-  };
+  mail: MailConfig;
   port: number;
   superAdminList: SuperAdmin[];
 }

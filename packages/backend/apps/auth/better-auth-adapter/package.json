@@ -3,9 +3,11 @@
   "bugs": {
     "url": "https://github.com/hexkit/multi-tenant-auth-service/issues"
   },
-  "description": "Environment configuration package for the auth service",
+  "description": "Better Auth adapter package for the auth service",
   "devDependencies": {
+    "@multi-tenant-auth-service/auth-domain": "workspace:*",
     "@hexkit/eslint-config": "0.3.0",
+    "@hexkit/patterns": "0.2.1",
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
     "@hexkit/vitest-config": "0.3.0",
@@ -19,8 +21,11 @@
     "vitest": "4.0.18"
   },
   "dependencies": {
-    "@hexkit/dotenv": "0.2.1",
-    "envalid": "8.0.0",
+    "@multi-tenant-auth-service/auth-application": "workspace:*",
+    "@multi-tenant-auth-service/auth-env": "workspace:*",
+    "@multi-tenant-auth-service/auth-prisma-adapter": "workspace:*",
+    "@multi-tenant-auth-service/mail-application": "workspace:*",
+    "better-auth": "^1.4.17",
     "inversify": "^7.11.0"
   },
   "devEngines": {
@@ -30,8 +35,8 @@
   "keywords": [
     "node",
     "typescript",
-    "environment",
-    "configuration",
+    "better-auth",
+    "authentication",
     "auth"
   ],
   "license": "MIT",
@@ -39,7 +44,7 @@
   "exports": {
     ".": "./lib/index.js"
   },
-  "name": "@multi-tenant-auth-service/auth-env",
+  "name": "@multi-tenant-auth-service/auth-better-auth-adapter",
   "publishConfig": {
     "access": "public"
   },

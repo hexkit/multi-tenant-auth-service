@@ -5,11 +5,13 @@
   },
   "description": "Prisma adapter package for the auth service",
   "devDependencies": {
+    "@multi-tenant-auth-service/auth-domain": "workspace:*",
     "@hexkit/eslint-config": "0.3.0",
+    "@hexkit/patterns": "0.2.1",
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
     "@hexkit/vitest-config": "0.3.0",
-    "@types/node": "22.13.6",
+    "@types/node": "24.10.9",
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "9.39.2",
     "prettier": "3.7.4",
@@ -17,14 +19,16 @@
     "rimraf": "6.1.2",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
-    "vitest": "3.0.7"
+    "vitest": "4.0.18"
   },
   "dependencies": {
+    "@multi-tenant-auth-service/auth-application": "workspace:*",
     "@hexkit/prisma": "~0.2.1",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@prisma/client-runtime-utils": "^7.3.0",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.5.0",
+    "inversify": "^7.11.0"
   },
   "devEngines": {
     "node": "^24.10.0",
@@ -51,14 +55,16 @@
     "url": "git+https://github.com/hexkit/multi-tenant-auth-service.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "build:clean": "rimraf lib",
     "format": "prettier --write ./src",
     "lint": "eslint ./src",
     "prebuild": "pnpm run build:clean",
     "test": "vitest run",
-    "test:unit": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:integration": "pnpm run test --project Integration",
+    "test:coverage": "pnpm run test:unit --coverage",
+    "test:uncommitted": "pnpm run test --changed=HEAD",
+    "test:unit": "pnpm run test --project Unit"
   },
   "type": "module",
   "version": "0.1.0"

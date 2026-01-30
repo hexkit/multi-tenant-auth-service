@@ -1,0 +1,11 @@
+/.turbo
+
+**/*.ts
+lib/**/*.d.ts.map
+!lib/index.d.ts
+!lib/index.d.ts.map
+
+.lintstagedrc.json
+eslint.config.mjs
+prettier.config.mjs
+tsconfig.json
