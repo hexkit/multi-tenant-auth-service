@@ -6,6 +6,11 @@
       "inputs": ["src/**/*.{cts,mts,ts,tsx}"],
       "outputs": ["dist/**", "lib/**"]
     },
+    "@multi-tenant-auth-service/auth-prisma-adapter#build": {
+      "dependsOn": ["^build"],
+      "inputs": ["prisma/schema.prisma", "src/**/*.{cts,mts,ts}"],
+      "outputs": ["generated/**", "lib/**"]
+    },
     "format": {
       "inputs": ["src/**/*.{cts,mts,ts,tsx}"],
       "outputs": ["src/**/*.{cts,mts,ts,tsx}"]
