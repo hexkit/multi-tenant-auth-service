@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker network inspect auth_service_network >/dev/null 2>&1 || \
+    docker network create --driver bridge auth_service_network
