@@ -1,5 +1,5 @@
 {
-  "name": "@multi-tenant-auth-service/foundation-scripts",
+  "name": "@multi-tenant-auth-service/scripts",
   "private": true,
   "description": "Common scripts for monorepo packages",
   "devDependencies": {
