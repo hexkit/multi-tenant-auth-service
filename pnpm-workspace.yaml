@@ -2,6 +2,7 @@ packages:
   - packages/backend/apps/*/*
   - packages/backend/libraries/*
   - packages/backend/tools/*
+  - packages/libraries/*
 
 ignoredBuiltDependencies:
   - '@prisma/engines'

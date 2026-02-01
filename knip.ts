@@ -47,5 +47,6 @@ export default {
     },
     "packages/backend/libraries/*": defaultWorkspaceProjectConfig,
     "packages/backend/tools/*": defaultWorkspaceProjectConfig,
+    "packages/libraries/*": defaultWorkspaceProjectConfig,
   },
 } satisfies KnipConfig;
