@@ -22,12 +22,16 @@ if (!VALID_TASK_NAME_PATTERN.test(taskToDryRun)) {
   process.exit(1);
 }
 
-if (baseRef !== undefined && !VALID_REF_PATTERN.test(baseRef)) {
-  console.error('Invalid baseRef format');
-  process.exit(1);
-}
-
 let execCommand = `pnpm exec turbo run ${taskToDryRun} --dry=json`;
+
+if (baseRef !== undefined) {
+  if (!VALID_REF_PATTERN.test(baseRef)) {
+    console.error('Invalid baseRef format');
+    process.exit(1);
+  }
+
+  execCommand += ` --filter ...[${baseRef}]`;
+}
 
 let stringifiedDryRun;
 try {
