@@ -1,0 +1,24 @@
+{
+  "name": "@multi-tenant-auth-service/foundation-scripts",
+  "private": true,
+  "description": "Common scripts for monorepo packages",
+  "devDependencies": {
+    "@hexkit/prettier-config": "0.2.0",
+    "prettier": "3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexkit/multi-tenant-auth-service.git"
+  },
+  "author": "Roberto Pintos López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexkit/multi-tenant-auth-service/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/hexkit/multi-tenant-auth-service#readme",
+  "bin": {
+    "foundation-get-affected-projects": "./bin/getAffectedProjects.js",
+    "foundation-get-affected-project-chunks": "./bin/getAffectedProjectsChunks.js"
+  }
+}
