@@ -25,7 +25,12 @@ const TURBOREPO_TASK_NOT_FOUND_MAGIC_STRING = '\u003cNONEXISTENT\u003e';
 
 const taskToDryRun = process.argv[2];
 const baseRef = process.argv[3];
-const chunks = parseInt(process.argv[4]);
+const chunks = Number.parseInt(process.argv[4], 10);
+
+if (!Number.isFinite(chunks) || chunks <= 0) {
+  process.stderr.write('chunks must be a positive integer\n');
+  process.exit(1);
+}
 
 let execCommand = `pnpm exec turbo run ${taskToDryRun} --dry=json`;
 
