@@ -24,7 +24,11 @@ export default {
   workspaces: {
     ".": {
       entry: [],
-      ignoreDependencies: ["@hexkit/instructions"],
+      ignoreBinaries: ["trap"],
+      ignoreDependencies: [
+        "@hexkit/instructions",
+        "@multi-tenant-auth-service/scripts",
+      ],
       project: [],
     },
     "packages/backend/apps/*/*": defaultWorkspaceProjectConfig,
