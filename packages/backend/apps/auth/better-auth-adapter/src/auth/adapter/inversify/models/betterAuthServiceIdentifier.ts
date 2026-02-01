@@ -1,3 +1,3 @@
 export const betterAuthServiceIdentifier: unique symbol = Symbol.for(
-  '@academyjs/auth-better-auth/betterAuth',
+  '@multi-tenant-auth-service/auth-better-auth-adapter/betterAuth',
 );

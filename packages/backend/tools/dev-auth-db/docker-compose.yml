@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      - POSTGRES_USER=postgres_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=auth_service_db
+    networks:
+      - auth_service_network
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+
+networks:
+  auth_service_network:
+    external: true
+    name: auth_service_network
+
+volumes:
+  db:
+    driver: local
