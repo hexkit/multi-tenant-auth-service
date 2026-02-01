@@ -39,6 +39,7 @@ export default {
         ...defaultWorkspaceProjectConfig.ignoreDependencies,
         "@prisma/adapter-pg",
         "@prisma/client",
+        "@prisma/client-runtime-utils",
         "dotenv",
         "prisma",
       ],
