@@ -1,0 +1,15 @@
+services:
+  maildev:
+    build:
+      context: .
+      dockerfile: docker/maildev.Dockerfile
+    networks:
+      - auth_service_network
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+networks:
+  auth_service_network:
+    external: true
+    name: auth_service_network

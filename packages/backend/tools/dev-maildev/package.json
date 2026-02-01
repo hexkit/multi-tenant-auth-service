@@ -1,0 +1,24 @@
+{
+  "author": "Roberto Pintos López",
+  "bugs": {
+    "url": "https://github.com/hexkit/multi-tenant-auth-service/issues"
+  },
+  "description": "Dev mail server for auth service",
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "homepage": "https://github.com/hexkit/multi-tenant-auth-service#readme",
+  "license": "See license in \"LICENSE\" file",
+  "name": "@multi-tenant-auth-service/dev-auth-maildev",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexkit/multi-tenant-auth-service.git"
+  },
+  "scripts": {
+    "close:e2e": "docker compose down",
+    "format": "prettier --write ./docker-compose.yml",
+    "postserve": "docker compose down",
+    "serve": "docker compose up"
+  }
+}
