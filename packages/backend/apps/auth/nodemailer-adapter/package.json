@@ -9,7 +9,7 @@
     "@hexkit/prettier-config": "0.2.0",
     "@hexkit/typescript-config": "0.2.0",
     "@hexkit/vitest-config": "0.3.0",
-    "@types/node": "24.10.9",
+    "@types/node": "24.10.10",
     "@types/nodemailer": "^7.0.9",
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "9.39.2",
