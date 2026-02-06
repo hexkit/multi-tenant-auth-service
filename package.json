@@ -8,7 +8,7 @@
     "@hexkit/instructions": "~0.4.0",
     "@multi-tenant-auth-service/scripts": "workspace:*",
     "husky": "9.1.7",
-    "knip": "5.83.0",
+    "knip": "5.83.1",
     "lint-staged": "16.2.7",
     "turbo": "2.8.1"
   },
