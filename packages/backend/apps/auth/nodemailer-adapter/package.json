@@ -23,7 +23,7 @@
     "@multi-tenant-auth-service/mail-application": "workspace:*",
     "@multi-tenant-auth-service/retry": "workspace:*",
     "inversify": "^7.11.0",
-    "nodemailer": "^7.0.13"
+    "nodemailer": "^8.0.1"
   },
   "devEngines": {
     "node": "^24.10.0",
