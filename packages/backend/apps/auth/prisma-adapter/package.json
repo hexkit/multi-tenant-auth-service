@@ -28,7 +28,7 @@
     "@prisma/client": "^7.3.0",
     "@prisma/client-runtime-utils": "^7.3.0",
     "dotenv": "^17.2.4",
-    "inversify": "^7.11.0"
+    "inversify": "^8.1.0"
   },
   "devEngines": {
     "node": "^24.10.0",

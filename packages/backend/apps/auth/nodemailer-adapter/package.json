@@ -22,7 +22,7 @@
   "dependencies": {
     "@multi-tenant-auth-service/mail-application": "workspace:*",
     "@multi-tenant-auth-service/retry": "workspace:*",
-    "inversify": "^7.11.0",
+    "inversify": "^8.1.0",
     "nodemailer": "^7.0.13"
   },
   "devEngines": {
