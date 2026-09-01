@@ -30,6 +30,6 @@
     "unused": "knip"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.29.2",
+  "packageManager": "pnpm@11.25.0",
   "private": true
 }
