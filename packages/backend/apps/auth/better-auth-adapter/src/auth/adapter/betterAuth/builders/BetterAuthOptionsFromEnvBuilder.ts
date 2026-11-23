@@ -9,7 +9,11 @@ import {
   MailDeliveryOutputPort,
   mailDeliveryOutputPortSymbol,
 } from '@multi-tenant-auth-service/mail-application';
-import { BetterAuthOptions, InferUser, PrettifyDeep } from 'better-auth';
+import {
+  BetterAuthOptions,
+  PrettifyDeep,
+  User as InferUser,
+} from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import {
   admin,
@@ -67,7 +71,11 @@ export class BetterAuthOptionsFromEnvBuilder implements Builder<AppBetterAuthOpt
           }: {
             email: string;
             otp: string;
-            type: 'sign-in' | 'email-verification' | 'forget-password';
+            type:
+              | 'sign-in'
+              | 'email-verification'
+              | 'change-email'
+              | 'forget-password';
           }): Promise<void> => {
             await this.#mailDeliveryOutputPort.send(
               this.#mailDeliveryOptionsFromSendOtpMailOptionsBuilder.build({
@@ -80,7 +88,7 @@ export class BetterAuthOptionsFromEnvBuilder implements Builder<AppBetterAuthOpt
         }),
         organization({
           allowUserToCreateOrganization: async (
-            user: PrettifyDeep<InferUser<AppBetterAuthOptions>>,
+            user: PrettifyDeep<InferUser<AppBetterAuthOptions['user']>>,
           ) => {
             const [domainUser]: User[] =
               await this.#findManyUsersOutputPort.findMany({

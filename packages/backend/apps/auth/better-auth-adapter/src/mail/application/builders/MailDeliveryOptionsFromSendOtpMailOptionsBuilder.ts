@@ -61,6 +61,8 @@ export class MailDeliveryOptionsFromSendOtpMailOptionsBuilder implements Builder
 
   #buildRequestInfoText(options: SendOtpMailOptions): string {
     switch (options.type) {
+      case 'change-email':
+        return 'A request to change your email has been received';
       case 'sign-in':
         return 'A sign-in request has been received';
       case 'email-verification':

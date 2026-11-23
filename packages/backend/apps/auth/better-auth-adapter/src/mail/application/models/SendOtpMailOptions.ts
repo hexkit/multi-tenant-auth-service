@@ -1,5 +1,5 @@
 export interface SendOtpMailOptions {
   email: string;
   otp: string;
-  type: 'sign-in' | 'email-verification' | 'forget-password';
+  type: 'sign-in' | 'email-verification' | 'forget-password' | 'change-email';
 }
