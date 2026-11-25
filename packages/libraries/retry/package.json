@@ -9,7 +9,7 @@
     "@hexkit/vitest-config": "0.3.0",
     "@inversifyjs/foundation-oxfmt-config": "0.2.0",
     "@inversifyjs/foundation-oxlint-config": "0.2.0",
-    "@types/node": "24.19.4",
+    "@types/node": "26.6.10",
     "@vitest/coverage-v8": "4.1.12",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
