@@ -1,15 +1,15 @@
 import {
-  MailDeliveryOptions,
-  MailDeliveryOutputPort,
+  type MailDeliveryOptions,
+  type MailDeliveryOutputPort,
 } from '@multi-tenant-auth-service/mail-application';
 import {
   retry,
   RetryOptionsStrategyKind,
 } from '@multi-tenant-auth-service/retry';
 import { inject, injectable } from 'inversify';
-import nodemailer from 'nodemailer';
+import type nodemailer from 'nodemailer';
 
-import { transporterSymbol } from '../models/transporterSymbol';
+import { transporterSymbol } from '../models/transporterSymbol.js';
 
 @injectable()
 export class MailDeliveryNodeMailerAdapter implements MailDeliveryOutputPort {

@@ -1,7 +1,7 @@
 import { FindManyPrismaService } from '@hexkit/prisma';
 
-import { PrismaClient } from '../../../../../generated/index.js';
-import * as runtime from '../../../../../generated/runtime/client.js';
+import { type PrismaClient } from '../../../../../generated/index.js';
+import type * as runtime from '../../../../../generated/runtime/client.js';
 
 export abstract class BaseFindManyPrismaService<
   TModel,

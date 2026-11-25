@@ -1,14 +1,14 @@
 import {
-  MailClientOptions,
+  type MailClientOptions,
   mailDeliveryOutputPortSymbol,
 } from '@multi-tenant-auth-service/mail-application';
-import { ContainerModule, ContainerModuleLoadOptions } from 'inversify';
+import { ContainerModule, type ContainerModuleLoadOptions } from 'inversify';
 import nodemailer from 'nodemailer';
 
-import { MailDeliveryNodeMailerAdapter } from '../../nodemailer/adapters/MailDeliveryNodeMailerAdapter';
-import { mailClientOptionsSymbol } from '../../nodemailer/models/mailClientOptionsSymbol';
-import { transporterSymbol } from '../../nodemailer/models/transporterSymbol';
-import { MailModuleOptions } from '../models/MailModuleOptions';
+import { MailDeliveryNodeMailerAdapter } from '../../nodemailer/adapters/MailDeliveryNodeMailerAdapter.js';
+import { mailClientOptionsSymbol } from '../../nodemailer/models/mailClientOptionsSymbol.js';
+import { transporterSymbol } from '../../nodemailer/models/transporterSymbol.js';
+import { type MailModuleOptions } from '../models/MailModuleOptions.js';
 
 export class MailModule extends ContainerModule {
   constructor(options: MailModuleOptions) {

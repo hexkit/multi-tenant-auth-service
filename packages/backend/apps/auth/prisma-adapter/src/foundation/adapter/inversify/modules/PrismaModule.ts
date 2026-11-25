@@ -2,7 +2,7 @@ import {
   findManyUsersOutputPortSymbol,
   updateManyUsersOutputPortSymbol,
 } from '@multi-tenant-auth-service/auth-application';
-import { ContainerModule, ContainerModuleLoadOptions } from 'inversify';
+import { ContainerModule, type ContainerModuleLoadOptions } from 'inversify';
 
 import { PrismaClient } from '../../../../../generated/index.js';
 import { FindManyUsersPrismaAdapter } from '../../../../user/adapter/prisma/adapters/FindManyUsersPrismaAdapter.js';

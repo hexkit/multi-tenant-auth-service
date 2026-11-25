@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 
 import { EnvironmentLoader } from '../../adapter/dotenv/services/EnvironmentLoader.js';
-import { Environment } from '../models/Environment.js';
+import { type Environment } from '../models/Environment.js';
 
 @injectable()
 export class EnvironmentService {

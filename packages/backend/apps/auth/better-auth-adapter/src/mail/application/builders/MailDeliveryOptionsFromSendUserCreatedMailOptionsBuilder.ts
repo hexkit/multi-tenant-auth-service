@@ -1,12 +1,12 @@
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 import {
-  Environment,
+  type Environment,
   EnvironmentService,
 } from '@multi-tenant-auth-service/auth-env';
-import { MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
+import { type MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
 import { inject, injectable } from 'inversify';
 
-import { SendUserCreatedMailOptions } from '../models/SendUserCreatedMailOptions.js';
+import { type SendUserCreatedMailOptions } from '../models/SendUserCreatedMailOptions.js';
 
 const SUBJECT: string = 'User Account Created';
 

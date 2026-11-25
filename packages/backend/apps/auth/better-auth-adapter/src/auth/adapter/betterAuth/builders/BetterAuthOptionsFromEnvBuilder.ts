@@ -1,15 +1,19 @@
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 import {
-  FindManyUsersOutputPort,
+  type FindManyUsersOutputPort,
   findManyUsersOutputPortSymbol,
 } from '@multi-tenant-auth-service/auth-application';
-import { User } from '@multi-tenant-auth-service/auth-domain';
+import { type User } from '@multi-tenant-auth-service/auth-domain';
 import { PrismaClient } from '@multi-tenant-auth-service/auth-prisma-adapter';
 import {
-  MailDeliveryOutputPort,
+  type MailDeliveryOutputPort,
   mailDeliveryOutputPortSymbol,
 } from '@multi-tenant-auth-service/mail-application';
-import { BetterAuthOptions, InferUser, PrettifyDeep } from 'better-auth';
+import {
+  type BetterAuthOptions,
+  type PrettifyDeep,
+  type User as InferUser,
+} from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import {
   admin,
@@ -21,7 +25,7 @@ import {
 import { inject, injectable } from 'inversify';
 
 import { MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
-import { AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
+import { type AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
 
 const BETTER_AUTH_ADMIN_ROLE: string = 'admin';
 
@@ -67,7 +71,11 @@ export class BetterAuthOptionsFromEnvBuilder implements Builder<AppBetterAuthOpt
           }: {
             email: string;
             otp: string;
-            type: 'sign-in' | 'email-verification' | 'forget-password';
+            type:
+              | 'sign-in'
+              | 'email-verification'
+              | 'change-email'
+              | 'forget-password';
           }): Promise<void> => {
             await this.#mailDeliveryOutputPort.send(
               this.#mailDeliveryOptionsFromSendOtpMailOptionsBuilder.build({
@@ -80,7 +88,7 @@ export class BetterAuthOptionsFromEnvBuilder implements Builder<AppBetterAuthOpt
         }),
         organization({
           allowUserToCreateOrganization: async (
-            user: PrettifyDeep<InferUser<AppBetterAuthOptions>>,
+            user: PrettifyDeep<InferUser<AppBetterAuthOptions['user']>>,
           ) => {
             const [domainUser]: User[] =
               await this.#findManyUsersOutputPort.findMany({

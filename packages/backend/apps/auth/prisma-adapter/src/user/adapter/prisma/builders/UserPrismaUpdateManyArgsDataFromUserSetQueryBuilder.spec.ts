@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { UserPrismaUpdateManyArgsData } from '../models/UserPrismaUpdateManyArgsData.js';
+import { type UserPrismaUpdateManyArgsData } from '../models/UserPrismaUpdateManyArgsData.js';
 import { UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder } from './UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder.js';
 
 describe(UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder, () => {

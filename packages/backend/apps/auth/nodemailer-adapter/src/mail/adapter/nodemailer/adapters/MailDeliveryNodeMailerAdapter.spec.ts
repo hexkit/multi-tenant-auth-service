@@ -4,21 +4,21 @@ import {
   describe,
   expect,
   it,
-  Mocked,
+  type Mocked,
   vitest,
 } from 'vitest';
 
 vitest.mock(import('@multi-tenant-auth-service/retry'));
 
-import { MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
+import { type MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
 import {
   retry,
-  RetryOptions,
+  type RetryOptions,
   RetryOptionsStrategyKind,
 } from '@multi-tenant-auth-service/retry';
-import nodemailer from 'nodemailer';
+import type nodemailer from 'nodemailer';
 
-import { MailDeliveryNodeMailerAdapter } from './MailDeliveryNodeMailerAdapter';
+import { MailDeliveryNodeMailerAdapter } from './MailDeliveryNodeMailerAdapter.js';
 
 describe(MailDeliveryNodeMailerAdapter, () => {
   let transporterMock: Mocked<

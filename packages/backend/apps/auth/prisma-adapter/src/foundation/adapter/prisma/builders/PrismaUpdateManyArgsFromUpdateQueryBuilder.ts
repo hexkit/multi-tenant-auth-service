@@ -1,4 +1,4 @@
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 
 interface UpdateQuery<TFindQuery, TSetQuery> {
   findQuery: TFindQuery;

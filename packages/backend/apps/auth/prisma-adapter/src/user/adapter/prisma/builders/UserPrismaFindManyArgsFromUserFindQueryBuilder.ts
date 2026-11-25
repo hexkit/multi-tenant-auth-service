@@ -1,8 +1,8 @@
-import { Builder } from '@hexkit/patterns';
-import { UserFindQuery } from '@multi-tenant-auth-service/auth-domain';
+import { type Builder } from '@hexkit/patterns';
+import { type UserFindQuery } from '@multi-tenant-auth-service/auth-domain';
 import { injectable } from 'inversify';
 
-import { Prisma } from '../../../../../generated/index.js';
+import { type Prisma } from '../../../../../generated/index.js';
 
 @injectable()
 export class UserPrismaFindManyArgsFromUserFindQueryBuilder implements Builder<

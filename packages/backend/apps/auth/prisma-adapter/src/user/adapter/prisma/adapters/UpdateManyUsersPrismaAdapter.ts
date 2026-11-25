@@ -1,13 +1,16 @@
-import { UpdateManyUsersOutputPort } from '@multi-tenant-auth-service/auth-application';
-import { User, UserUpdateQuery } from '@multi-tenant-auth-service/auth-domain';
+import { type UpdateManyUsersOutputPort } from '@multi-tenant-auth-service/auth-application';
+import {
+  type User,
+  type UserUpdateQuery,
+} from '@multi-tenant-auth-service/auth-domain';
 import { inject, injectable } from 'inversify';
 
 import {
-  Prisma,
+  type Prisma,
   PrismaClient,
-  User as PrismaUser,
-} from '../../../../../generated';
-import * as runtime from '../../../../../generated/runtime/client.js';
+  type User as PrismaUser,
+} from '../../../../../generated/index.js';
+import type * as runtime from '../../../../../generated/runtime/client.js';
 import { BaseUpdateManyPrismaService } from '../../../../foundation/adapter/prisma/services/BaseUpdateManyPrismaService.js';
 import { UserFromUserPrismaBuilder } from '../builders/UserFromUserPrismaBuilder.js';
 import { UserPrismaUpdateManyArgsFromUserUpdateQueryBuilder } from '../builders/UserPrismaUpdateManyArgsFromUserUpdateQueryBuilder.js';

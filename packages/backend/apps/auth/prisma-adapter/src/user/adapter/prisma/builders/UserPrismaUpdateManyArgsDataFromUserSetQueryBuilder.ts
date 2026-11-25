@@ -1,8 +1,8 @@
-import { Builder } from '@hexkit/patterns';
-import { UserSetQuery } from '@multi-tenant-auth-service/auth-domain';
+import { type Builder } from '@hexkit/patterns';
+import { type UserSetQuery } from '@multi-tenant-auth-service/auth-domain';
 import { injectable } from 'inversify';
 
-import { UserPrismaUpdateManyArgsData } from '../models/UserPrismaUpdateManyArgsData.js';
+import { type UserPrismaUpdateManyArgsData } from '../models/UserPrismaUpdateManyArgsData.js';
 
 @injectable()
 export class UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder implements Builder<

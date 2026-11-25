@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { UserFindQuery } from '@multi-tenant-auth-service/auth-domain';
+import { type UserFindQuery } from '@multi-tenant-auth-service/auth-domain';
 
-import { Prisma } from '../../../../../generated/index.js';
+import { type Prisma } from '../../../../../generated/index.js';
 import { UserPrismaFindManyArgsFromUserFindQueryBuilder } from './UserPrismaFindManyArgsFromUserFindQueryBuilder.js';
 
 describe(UserPrismaFindManyArgsFromUserFindQueryBuilder, () => {

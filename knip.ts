@@ -24,11 +24,7 @@ export default {
   workspaces: {
     ".": {
       entry: [],
-      ignoreBinaries: ["trap"],
-      ignoreDependencies: [
-        "@hexkit/instructions",
-        "@multi-tenant-auth-service/scripts",
-      ],
+      ignoreDependencies: ["@hexkit/instructions"],
       project: [],
     },
     "packages/backend/apps/*/*": defaultWorkspaceProjectConfig,
@@ -39,9 +35,7 @@ export default {
         ...defaultWorkspaceProjectConfig.ignoreDependencies,
         "@prisma/adapter-pg",
         "@prisma/client",
-        "@prisma/client-runtime-utils",
         "dotenv",
-        "prisma",
       ],
       ignoreFiles: ["prisma.config.ts"],
     },
