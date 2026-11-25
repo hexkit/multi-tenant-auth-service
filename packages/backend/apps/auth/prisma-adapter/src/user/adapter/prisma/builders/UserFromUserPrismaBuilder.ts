@@ -1,8 +1,8 @@
-import { Builder } from '@hexkit/patterns';
-import { User } from '@multi-tenant-auth-service/auth-domain';
+import { type Builder } from '@hexkit/patterns';
+import { type User } from '@multi-tenant-auth-service/auth-domain';
 import { injectable } from 'inversify';
 
-import { User as PrismaUser } from '../../../../../generated/index.js';
+import { type User as PrismaUser } from '../../../../../generated/index.js';
 
 @injectable()
 export class UserFromUserPrismaBuilder implements Builder<User, [PrismaUser]> {

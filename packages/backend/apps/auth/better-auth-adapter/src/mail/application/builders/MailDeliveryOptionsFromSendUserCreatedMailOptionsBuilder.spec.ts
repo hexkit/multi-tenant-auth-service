@@ -1,13 +1,13 @@
-import { beforeAll, describe, expect, it, Mocked, vitest } from 'vitest';
+import { beforeAll, describe, expect, it, type Mocked, vitest } from 'vitest';
 
 import {
-  Environment,
-  EnvironmentService,
-  MailConfig,
+  type Environment,
+  type EnvironmentService,
+  type MailConfig,
 } from '@multi-tenant-auth-service/auth-env';
-import { MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
+import { type MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
 
-import { SendUserCreatedMailOptions } from '../models/SendUserCreatedMailOptions.js';
+import { type SendUserCreatedMailOptions } from '../models/SendUserCreatedMailOptions.js';
 import { MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder } from './MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder.js';
 
 describe(MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder, () => {
@@ -60,8 +60,8 @@ describe(MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder, () => {
           from: environmentFixture.mail.defaultAddress,
           html: expect.stringContaining(
             sendUserCreatedMailOptionsFixture.password,
-          ) as unknown as string,
-          subject: expect.any(String) as unknown as string,
+          ) as string,
+          subject: expect.any(String) as string,
           to: [sendUserCreatedMailOptionsFixture.email],
         };
 

@@ -1,11 +1,11 @@
 import { betterAuth } from 'better-auth';
-import { ContainerModule, ContainerModuleLoadOptions } from 'inversify';
+import { ContainerModule, type ContainerModuleLoadOptions } from 'inversify';
 
 import { MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
 import { MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendUserCreatedMailOptionsBuilder.js';
 import { BetterAuthOptionsFromEnvBuilder } from '../../betterAuth/builders/BetterAuthOptionsFromEnvBuilder.js';
-import { AppBetterAuthOptions } from '../../betterAuth/models/AppBetterAuthOptions.js';
-import { BetterAuth } from '../../betterAuth/models/BetterAuth.js';
+import { type AppBetterAuthOptions } from '../../betterAuth/models/AppBetterAuthOptions.js';
+import { type BetterAuth } from '../../betterAuth/models/BetterAuth.js';
 import { betterAuthServiceIdentifier } from '../models/betterAuthServiceIdentifier.js';
 
 export class BetterAuthModule extends ContainerModule {

@@ -4,14 +4,14 @@ import {
   describe,
   expect,
   it,
-  Mocked,
+  type Mocked,
   vitest,
 } from 'vitest';
 
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 
 import {
-  BasePrismaUpdateManyArgs,
+  type BasePrismaUpdateManyArgs,
   PrismaUpdateManyArgsFromUpdateQueryBuilder,
 } from './PrismaUpdateManyArgsFromUpdateQueryBuilder.js';
 
@@ -62,6 +62,9 @@ describe(PrismaUpdateManyArgsFromUpdateQueryBuilder, () => {
       let result: unknown;
 
       beforeAll(() => {
+        findQueryFixture = Symbol();
+        setQueryFixture = Symbol();
+
         prismaFindManyArgsFromFindQueryBuilderResultFixture = {
           where: undefined,
         };
@@ -119,6 +122,9 @@ describe(PrismaUpdateManyArgsFromUpdateQueryBuilder, () => {
       let result: unknown;
 
       beforeAll(() => {
+        findQueryFixture = Symbol();
+        setQueryFixture = Symbol();
+
         prismaFindManyArgsFromFindQueryBuilderResultFixture = {
           where: Symbol(),
         };

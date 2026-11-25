@@ -1,5 +1,5 @@
-import { MailClientOptions } from '@multi-tenant-auth-service/mail-application';
-import { ServiceIdentifier } from 'inversify';
+import { type MailClientOptions } from '@multi-tenant-auth-service/mail-application';
+import { type ServiceIdentifier } from 'inversify';
 
 export interface MailModuleOptions {
   inject?: ServiceIdentifier[];

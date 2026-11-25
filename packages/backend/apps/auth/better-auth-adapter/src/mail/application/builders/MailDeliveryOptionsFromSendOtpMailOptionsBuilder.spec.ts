@@ -1,13 +1,13 @@
-import { beforeAll, describe, expect, it, Mocked, vitest } from 'vitest';
+import { beforeAll, describe, expect, it, type Mocked, vitest } from 'vitest';
 
 import {
   type Environment,
-  EnvironmentService,
+  type EnvironmentService,
   type MailConfig,
 } from '@multi-tenant-auth-service/auth-env';
-import { MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
+import { type MailDeliveryOptions } from '@multi-tenant-auth-service/mail-application';
 
-import { SendOtpMailOptions } from '../models/SendOtpMailOptions.js';
+import { type SendOtpMailOptions } from '../models/SendOtpMailOptions.js';
 import { MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from './MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
 
 describe(MailDeliveryOptionsFromSendOtpMailOptionsBuilder, () => {
@@ -60,8 +60,8 @@ describe(MailDeliveryOptionsFromSendOtpMailOptionsBuilder, () => {
           from: environmentFixture.mail.defaultAddress,
           html: expect.stringContaining(
             sendOtpMailOptionsFixture.otp,
-          ) as unknown as string,
-          subject: expect.any(String) as unknown as string,
+          ) as string,
+          subject: expect.any(String) as string,
           to: [sendOtpMailOptionsFixture.email],
         };
 

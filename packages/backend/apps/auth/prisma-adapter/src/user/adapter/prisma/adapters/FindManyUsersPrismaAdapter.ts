@@ -6,11 +6,11 @@ import {
 import { inject, injectable } from 'inversify';
 
 import {
-  Prisma,
+  type Prisma,
   PrismaClient,
-  User as PrismaUser,
+  type User as PrismaUser,
 } from '../../../../../generated/index.js';
-import * as runtime from '../../../../../generated/runtime/client.js';
+import type * as runtime from '../../../../../generated/runtime/client.js';
 import { BaseFindManyPrismaService } from '../../../../foundation/adapter/prisma/services/BaseFindManyPrismaService.js';
 import { UserFromUserPrismaBuilder } from '../builders/UserFromUserPrismaBuilder.js';
 import { UserPrismaFindManyArgsFromUserFindQueryBuilder } from '../builders/UserPrismaFindManyArgsFromUserFindQueryBuilder.js';

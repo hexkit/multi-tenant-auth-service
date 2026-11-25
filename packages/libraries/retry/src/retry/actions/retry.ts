@@ -1,5 +1,5 @@
-import { RetryOptions } from '../models/RetryOptions';
-import { RetryOptionsStrategyKind } from '../models/RetryOptionsStrategyKind';
+import { type RetryOptions } from '../models/RetryOptions.js';
+import { RetryOptionsStrategyKind } from '../models/RetryOptionsStrategyKind.js';
 
 export async function retry<T>(options: RetryOptions<T>): Promise<T> {
   const { operation, strategy }: RetryOptions<T> = options;

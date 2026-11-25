@@ -4,14 +4,14 @@ import {
   describe,
   expect,
   it,
-  Mock,
+  type Mock,
   vitest,
 } from 'vitest';
 
-import { ConstantRetryOptionsStrategy } from '../models/ConstantRetryOptionsStrategy';
-import { RetryOptions } from '../models/RetryOptions';
-import { RetryOptionsStrategyKind } from '../models/RetryOptionsStrategyKind';
-import { retry } from './retry';
+import { type ConstantRetryOptionsStrategy } from '../models/ConstantRetryOptionsStrategy.js';
+import { type RetryOptions } from '../models/RetryOptions.js';
+import { RetryOptionsStrategyKind } from '../models/RetryOptionsStrategyKind.js';
+import { retry } from './retry.js';
 
 describe(retry, () => {
   let functionMock: Mock<() => unknown>;

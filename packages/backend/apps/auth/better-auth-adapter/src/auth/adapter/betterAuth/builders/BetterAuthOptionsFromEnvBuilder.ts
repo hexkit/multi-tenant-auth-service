@@ -1,18 +1,18 @@
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 import {
-  FindManyUsersOutputPort,
+  type FindManyUsersOutputPort,
   findManyUsersOutputPortSymbol,
 } from '@multi-tenant-auth-service/auth-application';
-import { User } from '@multi-tenant-auth-service/auth-domain';
+import { type User } from '@multi-tenant-auth-service/auth-domain';
 import { PrismaClient } from '@multi-tenant-auth-service/auth-prisma-adapter';
 import {
-  MailDeliveryOutputPort,
+  type MailDeliveryOutputPort,
   mailDeliveryOutputPortSymbol,
 } from '@multi-tenant-auth-service/mail-application';
 import {
-  BetterAuthOptions,
-  PrettifyDeep,
-  User as InferUser,
+  type BetterAuthOptions,
+  type PrettifyDeep,
+  type User as InferUser,
 } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import {
@@ -25,7 +25,7 @@ import {
 import { inject, injectable } from 'inversify';
 
 import { MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
-import { AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
+import { type AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
 
 const BETTER_AUTH_ADMIN_ROLE: string = 'admin';
 

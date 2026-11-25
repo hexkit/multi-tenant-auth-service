@@ -4,7 +4,7 @@ import {
   describe,
   expect,
   it,
-  Mocked,
+  type Mocked,
   vitest,
 } from 'vitest';
 
@@ -12,9 +12,9 @@ vitest.mock(import('@multi-tenant-auth-service/auth-prisma-adapter'));
 vitest.mock(import('better-auth/plugins'));
 vitest.mock(import('better-auth/adapters/prisma'));
 
-import { FindManyUsersOutputPort } from '@multi-tenant-auth-service/auth-application';
+import { type FindManyUsersOutputPort } from '@multi-tenant-auth-service/auth-application';
 import { PrismaClient } from '@multi-tenant-auth-service/auth-prisma-adapter';
-import { MailDeliveryOutputPort } from '@multi-tenant-auth-service/mail-application';
+import { type MailDeliveryOutputPort } from '@multi-tenant-auth-service/mail-application';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import {
   admin,
@@ -24,8 +24,8 @@ import {
   twoFactor,
 } from 'better-auth/plugins';
 
-import { MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
-import { AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
+import { type MailDeliveryOptionsFromSendOtpMailOptionsBuilder } from '../../../../mail/application/builders/MailDeliveryOptionsFromSendOtpMailOptionsBuilder.js';
+import { type AppBetterAuthOptions } from '../models/AppBetterAuthOptions.js';
 import { BetterAuthOptionsFromEnvBuilder } from './BetterAuthOptionsFromEnvBuilder.js';
 
 type PrismaAdapterResult = ReturnType<typeof prismaAdapter>;
@@ -69,7 +69,7 @@ describe(BetterAuthOptionsFromEnvBuilder, () => {
 
       beforeAll(() => {
         prismaAdapterResult = Symbol() as unknown as PrismaAdapterResult;
-        adminResult = Symbol() as unknown as ReturnType<typeof admin>;
+        adminResult = Symbol() as ReturnType<typeof admin>;
         emailOtpResult = Symbol() as unknown as ReturnType<typeof emailOTP>;
         organizationResult = Symbol() as unknown as ReturnType<
           typeof organization

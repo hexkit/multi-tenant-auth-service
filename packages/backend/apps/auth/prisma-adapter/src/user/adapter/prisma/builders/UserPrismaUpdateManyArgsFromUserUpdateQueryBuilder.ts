@@ -1,12 +1,12 @@
-import { Builder } from '@hexkit/patterns';
+import { type Builder } from '@hexkit/patterns';
 import {
-  UserFindQuery,
-  UserSetQuery,
-  UserUpdateQuery,
+  type UserFindQuery,
+  type UserSetQuery,
+  type UserUpdateQuery,
 } from '@multi-tenant-auth-service/auth-domain';
 import { inject, injectable } from 'inversify';
 
-import { Prisma } from '../../../../../generated/index.js';
+import { type Prisma } from '../../../../../generated/index.js';
 import { PrismaUpdateManyArgsFromUpdateQueryBuilder } from '../../../../foundation/adapter/prisma/builders/PrismaUpdateManyArgsFromUpdateQueryBuilder.js';
 import { UserPrismaFindManyArgsFromUserFindQueryBuilder } from './UserPrismaFindManyArgsFromUserFindQueryBuilder.js';
 import { UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder } from './UserPrismaUpdateManyArgsDataFromUserSetQueryBuilder.js';

@@ -1,5 +1,5 @@
-import { BaseRetryOptionsStrategy } from './BaseRetryOptionsStrategy';
-import { RetryOptionsStrategyKind } from './RetryOptionsStrategyKind';
+import { type BaseRetryOptionsStrategy } from './BaseRetryOptionsStrategy.js';
+import { type RetryOptionsStrategyKind } from './RetryOptionsStrategyKind.js';
 
 export interface ExponentialRetryOptionsStrategy extends BaseRetryOptionsStrategy<RetryOptionsStrategyKind.exponential> {
   initialDelayMs: number;

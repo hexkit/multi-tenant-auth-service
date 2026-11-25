@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { User } from '@multi-tenant-auth-service/auth-domain';
+import { type User } from '@multi-tenant-auth-service/auth-domain';
 
-import { User as PrismaUser } from '../../../../../generated/index.js';
+import { type User as PrismaUser } from '../../../../../generated/index.js';
 import { UserFromUserPrismaBuilder } from './UserFromUserPrismaBuilder.js';
 
 describe(UserFromUserPrismaBuilder, () => {

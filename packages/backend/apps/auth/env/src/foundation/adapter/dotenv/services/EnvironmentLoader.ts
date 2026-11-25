@@ -2,8 +2,8 @@ import { DotEnvLoader } from '@hexkit/dotenv';
 import { bool, cleanEnv, json, num, str, url } from 'envalid';
 import { injectable } from 'inversify';
 
-import { Environment } from '../../../application/models/Environment.js';
-import { EnvironmentRaw } from '../../../application/models/EnvironmentRaw.js';
+import { type Environment } from '../../../application/models/Environment.js';
+import { type EnvironmentRaw } from '../../../application/models/EnvironmentRaw.js';
 
 const DEFAULT_DOT_ENV_PATH: string = '.env';
 const DOT_ENV_PATH_ENV_VAR: string = 'APP_DOT_ENV_PATH';

@@ -1,11 +1,11 @@
-import { BetterAuthOptions, Logger } from 'better-auth';
-import { DBAdapter } from 'better-auth/adapters';
+import { type BetterAuthOptions, type Logger } from 'better-auth';
+import { type DBAdapter } from 'better-auth/adapters';
 import {
-  admin,
-  emailOTP,
-  openAPI,
-  organization,
-  twoFactor,
+  type admin,
+  type emailOTP,
+  type openAPI,
+  type organization,
+  type twoFactor,
 } from 'better-auth/plugins';
 
 export interface AppBetterAuthOptions extends BetterAuthOptions {
