@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@hexkit/dotenv": "0.2.1",
-    "envalid": "8.2.0",
+    "envalid": "9.0.0",
     "inversify": "^7.11.0"
   },
   "devEngines": {
