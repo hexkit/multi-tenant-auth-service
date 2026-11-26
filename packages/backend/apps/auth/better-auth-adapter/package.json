@@ -11,11 +11,11 @@
     "@inversifyjs/foundation-oxfmt-config": "0.2.0",
     "@inversifyjs/foundation-oxlint-config": "0.2.0",
     "@inversifyjs/foundation-typescript-config": "0.2.1",
-    "@types/node": "26.6.10",
+    "@types/node": "26.6.11",
     "@vitest/coverage-v8": "4.1.12",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
-    "oxlint-tsgolint": "7.0.2008",
+    "oxlint-tsgolint": "7.0.2009",
     "rimraf": "6.1.4",
     "typescript": "7.0.2",
     "vitest": "4.1.12"

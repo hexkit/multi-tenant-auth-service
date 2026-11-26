@@ -13,7 +13,7 @@
     "@vitest/coverage-v8": "4.1.12",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
-    "oxlint-tsgolint": "7.0.2008",
+    "oxlint-tsgolint": "7.0.2009",
     "rimraf": "6.1.4",
     "typescript": "7.0.2",
     "vitest": "4.1.12"
