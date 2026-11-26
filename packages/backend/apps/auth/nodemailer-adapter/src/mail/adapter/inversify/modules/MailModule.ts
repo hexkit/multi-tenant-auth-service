@@ -3,7 +3,11 @@ import {
   mailDeliveryOutputPortSymbol,
 } from '@multi-tenant-auth-service/mail-application';
 import { ContainerModule, type ContainerModuleLoadOptions } from 'inversify';
-import nodemailer from 'nodemailer';
+import {
+  createTransport,
+  type SentMessageInfo,
+  type Transporter,
+} from 'nodemailer';
 
 import { MailDeliveryNodeMailerAdapter } from '../../nodemailer/adapters/MailDeliveryNodeMailerAdapter.js';
 import { mailClientOptionsSymbol } from '../../nodemailer/models/mailClientOptionsSymbol.js';
@@ -24,10 +28,8 @@ export class MailModule extends ContainerModule {
         .inSingletonScope();
 
       containerModuleOptions.bind(transporterSymbol).toResolvedValue(
-        (
-          options: MailClientOptions,
-        ): nodemailer.Transporter<nodemailer.SentMessageInfo> =>
-          nodemailer.createTransport({
+        (options: MailClientOptions): Transporter<SentMessageInfo> =>
+          createTransport({
             auth: {
               pass: options.auth.password,
               user: options.auth.user,

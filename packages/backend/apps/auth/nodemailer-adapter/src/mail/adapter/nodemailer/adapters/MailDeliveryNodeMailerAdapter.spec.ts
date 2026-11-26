@@ -16,23 +16,25 @@ import {
   type RetryOptions,
   RetryOptionsStrategyKind,
 } from '@multi-tenant-auth-service/retry';
-import type nodemailer from 'nodemailer';
+import {
+  type Transporter,
+  type SentMessageInfo,
+  type SendMailOptions,
+} from 'nodemailer';
 
 import { MailDeliveryNodeMailerAdapter } from './MailDeliveryNodeMailerAdapter.js';
 
 describe(MailDeliveryNodeMailerAdapter, () => {
-  let transporterMock: Mocked<
-    nodemailer.Transporter<nodemailer.SentMessageInfo>
-  >;
+  let transporterMock: Mocked<Transporter<SentMessageInfo>>;
 
   let mailDeliveryNodeMailerAdapter: MailDeliveryNodeMailerAdapter;
 
   beforeAll(() => {
     transporterMock = {
-      sendMail: vitest.fn(),
-    } as Partial<
-      Mocked<nodemailer.Transporter<nodemailer.SentMessageInfo>>
-    > as Mocked<nodemailer.Transporter<nodemailer.SentMessageInfo>>;
+      sendMail: vitest.fn() as unknown,
+    } as Partial<Mocked<Transporter<SentMessageInfo>>> as Mocked<
+      Transporter<SentMessageInfo>
+    >;
 
     vitest
       .mocked(retry)
@@ -88,7 +90,7 @@ describe(MailDeliveryNodeMailerAdapter, () => {
       });
 
       it('should call transporter.sendMail()', () => {
-        const expectedSendMailOptions: nodemailer.SendMailOptions = {
+        const expectedSendMailOptions: SendMailOptions = {
           from: mailDeliveryOptionsFixture.from,
           html: mailDeliveryOptionsFixture.html,
           subject: mailDeliveryOptionsFixture.subject,

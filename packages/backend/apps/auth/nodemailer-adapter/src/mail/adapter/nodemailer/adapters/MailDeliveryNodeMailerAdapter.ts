@@ -7,23 +7,27 @@ import {
   RetryOptionsStrategyKind,
 } from '@multi-tenant-auth-service/retry';
 import { inject, injectable } from 'inversify';
-import type nodemailer from 'nodemailer';
+import {
+  type Transporter,
+  type SendMailOptions,
+  type SentMessageInfo,
+} from 'nodemailer';
 
 import { transporterSymbol } from '../models/transporterSymbol.js';
 
 @injectable()
 export class MailDeliveryNodeMailerAdapter implements MailDeliveryOutputPort {
-  readonly #transporter: nodemailer.Transporter<nodemailer.SentMessageInfo>;
+  readonly #transporter: Transporter<SentMessageInfo>;
 
   constructor(
     @inject(transporterSymbol)
-    transporter: nodemailer.Transporter<nodemailer.SentMessageInfo>,
+    transporter: Transporter<SentMessageInfo>,
   ) {
     this.#transporter = transporter;
   }
 
   public async send(deliveryOptions: MailDeliveryOptions): Promise<void> {
-    const mailOptions: nodemailer.SendMailOptions =
+    const mailOptions: SendMailOptions =
       this.#buildMailOptions(deliveryOptions);
 
     await retry({
@@ -39,9 +43,7 @@ export class MailDeliveryNodeMailerAdapter implements MailDeliveryOutputPort {
     });
   }
 
-  #buildMailOptions(
-    deliveryOptions: MailDeliveryOptions,
-  ): nodemailer.SendMailOptions {
+  #buildMailOptions(deliveryOptions: MailDeliveryOptions): SendMailOptions {
     return {
       from: deliveryOptions.from,
       html: deliveryOptions.html,
