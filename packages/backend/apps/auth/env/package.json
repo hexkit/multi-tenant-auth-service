@@ -10,13 +10,13 @@
     "@inversifyjs/foundation-oxlint-config": "0.2.0",
     "@inversifyjs/foundation-typescript-config": "0.2.1",
     "@types/node": "26.6.11",
-    "@vitest/coverage-v8": "4.1.12",
+    "@vitest/coverage-v8": "5.1.1",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
     "oxlint-tsgolint": "7.0.2009",
     "rimraf": "6.1.4",
     "typescript": "7.0.2",
-    "vitest": "4.1.12"
+    "vitest": "5.1.1"
   },
   "dependencies": {
     "@hexkit/dotenv": "0.2.1",
