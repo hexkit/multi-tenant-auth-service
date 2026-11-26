@@ -28,7 +28,7 @@
     "@prisma/adapter-pg": "^7.10.1",
     "@prisma/client": "^7.10.1",
     "@prisma/client-runtime-utils": "^7.10.1",
-    "dotenv": "^17.4.2",
+    "dotenv": "^18.0.10",
     "inversify": "^7.11.0"
   },
   "devEngines": {
