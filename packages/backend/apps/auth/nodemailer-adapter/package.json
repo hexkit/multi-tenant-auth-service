@@ -10,7 +10,7 @@
     "@inversifyjs/foundation-oxfmt-config": "0.2.0",
     "@inversifyjs/foundation-oxlint-config": "0.2.0",
     "@types/node": "26.6.10",
-    "@types/nodemailer": "^7.0.12",
+    "@types/nodemailer": "^8.0.2",
     "@vitest/coverage-v8": "4.1.12",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
