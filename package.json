@@ -2,15 +2,15 @@
   "name": "root",
   "devDependencies": {
     "@changesets/cli": "2.31.1",
-    "@commitlint/cli": "20.5.3",
-    "@commitlint/config-conventional": "20.5.3",
-    "@commitlint/prompt-cli": "20.5.3",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "@commitlint/prompt-cli": "21.2.4",
     "@hexkit/instructions": "~0.4.0",
     "@multi-tenant-auth-service/scripts": "workspace:*",
     "husky": "9.1.7",
     "knip": "6.48.0",
     "lint-staged": "17.6.2",
-    "turbo": "2.8.1"
+    "turbo": "2.11.13"
   },
   "scripts": {
     "build": "turbo run build",
@@ -30,6 +30,6 @@
     "unused": "knip"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.34.9",
+  "packageManager": "pnpm@12.21.0",
   "private": true
 }

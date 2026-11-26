@@ -4,10 +4,8 @@ packages:
   - packages/backend/tools/*
   - packages/libraries/*
 
-ignoredBuiltDependencies:
-  - '@prisma/engines'
-  - prisma
-
-onlyBuiltDependencies:
-  - '@swc/core'
-  - esbuild
+allowBuilds:
+  '@prisma/engines': true
+  '@swc/core': true
+  esbuild: true
+  prisma: true
