@@ -1,3 +1,3 @@
-import config from '@hexkit/vitest-config';
+import { defaultConfig } from '@inversifyjs/foundation-vitest-config';
 
-export default config;
+export default defaultConfig;
